@@ -76,7 +76,7 @@ function Dashboard() {
                                 </div>
                                 <div className="flex items-center justify-between flex-1 p-3">
                                     <p className="text-2xl font-semibold">99.9%</p>
-                                    <p>Projects</p>
+                                    <p>Project</p>
                                 </div>
                             </div>
                             <div className="bg-white  rounded-full flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">

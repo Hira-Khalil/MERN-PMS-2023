@@ -30,6 +30,7 @@ function ProjectDetails() {
         <>
             <div className="h-screen w-screen px-7 flex justify-end">
                 <div className="ps-16 w-10/12 h-5/6">
+
                     <nav aria-label="breadcrumb" className="text-black w-full p-4 dark:bg-gray-800 dark:text-gray-100">
                         <ol className="text-black mt-6 flex h-8 space-x-2 dark:text-gray-100">
                             <li className="text-black flex items-center">
@@ -44,20 +45,20 @@ function ProjectDetails() {
                                 </a>
                             </li>
                         </ol>
-                        <h3 className="font-bold text-3xl text-indigo-500">Project Details</h3>
+                        <h3 className="font-bold text-3xl text-black">Project Details</h3>
                     </nav>
 
                     {/* Table for Team Members */}
                     <div className="mt-4 px-7">
                         <h4 className="text-xl font-semibold mb-2">Team Members</h4>
-                        <table className="min-w-full border border-collapse rounded overflow-hidden text-left bg-white dark:bg-white">
+                        <table className="min-w-full border border-collapse rounded overflow-hidden text-left bg-white dark:bg-white text-sm">
                             <thead className="bg-white dark:bg-white">
                                 <tr>
                                     <th colSpan="5" className="border p-2 text-center bg-white dark:bg-white">
                                         Project Name: PMS
                                     </th>
                                 </tr>
-                                <tr>
+                                <tr className='bg-indigo-400 text-white'>
                                     <th className="border p-2">ID</th>
                                     <th className="border p-2">Name</th>
                                     <th className="border p-2">Task</th>
