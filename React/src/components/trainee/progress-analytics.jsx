@@ -1,3 +1,4 @@
+import React from 'react';
 
 function ProgressAnalytics() {
     return (
@@ -20,6 +21,7 @@ function ProgressAnalytics() {
 
                     </nav>
                 </div>
+
             </div>
         </>
     );

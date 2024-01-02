@@ -1,21 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Layout from './Layout.jsx'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import OnBoarding from "./components/auth/on-boarding.jsx";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import './index.css'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <Layout />,
   },
+  {
+    path: "/onboarding",
+    element: <OnBoarding />,
+  },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Layout />
-  </React.StrictMode>,
+    <RouterProvider router={router} />
+  </React.StrictMode>
 )

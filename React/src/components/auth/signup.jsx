@@ -3,7 +3,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 function Signup(updateState) {
-    const [firstName, setFirstName] = useState("");
+    const [firstname, setfirstname] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -11,7 +11,7 @@ function Signup(updateState) {
     const [role, setRole] = useState("");
 
     const SIGNUP = async () => {
-        console.log("firstName", firstName);
+        console.log("firstname", firstname);
         console.log("lastName", lastName);
         console.log("email", email);
         console.log("password", password);
@@ -19,7 +19,7 @@ function Signup(updateState) {
         console.log("role", role);
 
         const { data } = await axios.post("http://localhost:3000/user/createUser", {
-            firstName,
+            firstname,
             lastName,
             email,
             password,
@@ -27,7 +27,7 @@ function Signup(updateState) {
             role
         })
 
-        console.log("login reponse", data)
+        console.log("data", data)
         if (data.error) {
             return alert("invalid credentials")
         }
@@ -73,7 +73,7 @@ function Signup(updateState) {
                                     <label class="mb-2.5 block font-medium text-black dark:text-white">First Name</label>
                                     <div class="relative">
                                         <input onChange={(e) => {
-                                            setFirstName(e.target.value);
+                                            setfirstname(e.target.value);
                                         }} type="text" placeholder="Enter your First Name" class="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary" fdprocessedid="3jpumg" />
 
                                         <span class="absolute right-4 top-4">

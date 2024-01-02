@@ -7,14 +7,13 @@ module.exports = {
         try {
             const userId = uuidV4();
             const isUser = await userModel.getUserByEmail(body.email);
-            if (isUser.response || isUser.error) {
+            if (!isUser.response || isUser.error) {
                 return {
                     error: "user with email already exists",
                 };
             }
             delete body.confirmPassword;
             body.password = await bycrypt.hash(body.password, 10);
-            console.log(body);
             const user = await userModel.createUser(body, userId);
             if (user.error) {
                 return {
@@ -82,6 +81,24 @@ module.exports = {
                     error: user.error,
                 };
             }
+            return {
+                response: user.response,
+            };
+        } catch (error) {
+            return {
+                error: error,
+            };
+        }
+    },
+    onBoarding: async (body) => {
+        try {
+            const user = await userModel.onBoarding(body.userId, body.instructorId);
+            if (!user.response || user.error) {
+                return {
+                    error: "user does not exist",
+                };
+            }
+
             return {
                 response: user.response,
             };

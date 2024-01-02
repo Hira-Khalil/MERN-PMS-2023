@@ -35,7 +35,7 @@ const Sidebar = (updateState) => {
                         </a>
                     </li>
                     <li className="dark:bg-gray-800 dark:text-gray-50  " onClick={() => {
-                        void updateState.updateState("PROJECT DETAILS")
+                        void updateState.updateState("PROJECTDETAILS")
                     }}>
 
                         <a rel="noopener noreferrer" href="#" className="hover:text-current text-gray-400 flex items-center p-2 space-x-3 rounded-md">
@@ -54,7 +54,7 @@ const Sidebar = (updateState) => {
                         </a>
                     </li>
                     <li className="dark:bg-gray-800 dark:text-gray-50  " onClick={() => {
-                        void updateState.updateState("PROGRESS ANALYTICS")
+                        void updateState.updateState("PROGRESSANALYTICS")
                     }}>
                         <a rel="noopener noreferrer" href="#" className="hover:text-current text-gray-400 flex items-center p-2 space-x-3 rounded-md">
                             <IoMdAnalytics />

@@ -120,4 +120,27 @@ module.exports = {
         }
 
     },
+    onBoarding: async (userId, instructorId) => {
+        try {
+            const user = await models.Users.update(
+                {
+                    isRequested: true,
+                    instructorId,
+                },
+                {
+                    where: {
+                        userId: userId,
+                    },
+                }
+            );
+
+            return {
+                response: user,
+            };
+        } catch (error) {
+            return {
+                error: error,
+            };
+        }
+    },
 };

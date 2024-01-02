@@ -1,4 +1,3 @@
-import React from 'react';
 
 function ProjectDetails() {
     // Dummy data for team members with status and project files

@@ -55,8 +55,6 @@ module.exports = {
     },
     getAllUsers: async (req, res) => {
         try {
-
-
             const validate = await paginationSchema.validateAsync(req.query);
             const users = await userService.getAllUsers(validate);
 
@@ -98,6 +96,24 @@ module.exports = {
         try {
             const validate = await updateUserSchema.validateAsync(req.body);
             const user = await userService.updateUser(validate);
+            if (user.error) {
+                return res.send({
+                    error: user.error,
+                });
+            }
+            return res.send({
+                response: user.response,
+            });
+        } catch (error) {
+            return res.send({
+                error: error,
+            });
+        }
+    },
+    onBoarding: async (req, res) => {
+        try {
+            const validate = await onBoardingSchema.validateAsync(req.body);
+            const user = await userService.onBoarding(validate);
             if (user.error) {
                 return res.send({
                     error: user.error,

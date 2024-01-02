@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 function Task() {
     // State variables to manage task name, task description file, uploaded file, and success messages for each row
     const [tasks, setTasks] = useState([
-        { id: 1, taskName: 'login page', taskDescriptionFile: 'existing-file.pdf', file: null, successMessage: '' },
-        { id: 2, taskName: 'Onboarding', taskDescriptionFile: 'existing-file.pdf', file: null, successMessage: '' },
-        { id: 3, taskName: 'Trainee Dashboard', taskDescriptionFile: 'existing-file.pdf', file: null, successMessage: '' },
+        { id: 1, taskName: 'Login page', taskDescriptionFile: 'existing-file.pdf', file: null, successMessage: '', deadline: '2023-12-31' },
+        { id: 2, taskName: 'Onboarding', taskDescriptionFile: 'existing-file.pdf', file: null, successMessage: '', deadline: '2023-12-25' },
+        { id: 3, taskName: 'Trainee Dashboard', taskDescriptionFile: 'existing-file.pdf', file: null, successMessage: '', deadline: '2023-12-20' },
     ]);
 
     // Function to handle changes in the task name field
@@ -28,10 +28,16 @@ function Task() {
         event.preventDefault();
 
         const updatedTasks = [...tasks];
-        updatedTasks[taskId - 1].successMessage = 'File submitted successfully!';
+        const originalTaskName = updatedTasks[taskId - 1].taskName; // Store the initial task name
 
-        // Reset the form
-        updatedTasks[taskId - 1].taskName = '';
+        if (updatedTasks[taskId - 1].file) {
+            updatedTasks[taskId - 1].successMessage = <p className="text-green-500 mt-2">File submitted successfully!</p>;
+        } else {
+            updatedTasks[taskId - 1].successMessage = <p className="text-red-500 mt-2">Please choose a file!</p>;
+        }
+
+        // Reset the form, keeping the original task name
+        updatedTasks[taskId - 1].taskName = originalTaskName;
         updatedTasks[taskId - 1].file = null;
 
         setTasks(updatedTasks);
@@ -39,38 +45,40 @@ function Task() {
 
     return (
         <div className="h-screen w-screen  justify-center items-center flex">
-            <div className="ps-16 w-full-right h-screen">
+            <div className="ml-20 ps-20 w-10/12 h-5/6">
 
                 <nav aria-label="breadcrumb" className="text-black w-full  dark:bg-gray-800 dark:text-gray-100">
-                    <ol className="text-black mt-7 flex h-8 space-x-2 dark:text-gray-100">
+                    <ol className="text-black mt-7 px-5 ml-14 flex h-8 space-x-2 dark:text-gray-100">
                         <li className="text-black flex items-center">
                             <a rel="noopener noreferrer" href="#" title="Back to homepage" className="text-black text-sm hover:text-black flex items-center hover:underline">
                                 Trainee
                             </a>
                         </li>
-                        <li className="flex items-center space-x-1">
+                        <li className="flex items-center  space-x-1">
                             <span className="dark:text-gray-400">/</span>
                             <a rel="noopener noreferrer" href="#" className="text-black text-sm hover:text-black flex items-center px-1 capitalize hover:underline">
                                 Task Details
                             </a>
                         </li>
                     </ol>
-                    <h3 className="font-bold text-3xl text-black">Task Details</h3>
+                    <h3 className="font-bold text-3xl ml-12 px-7 text-black">Task Details</h3>
                 </nav>
 
-                <div className="w-full mt-9">
+                <div className="w-full ml-20  mt-12">
                     <form className="w-full text-align-left">
-                        <table className="w-full border border-collapse rounded overflow-hidden text-left bg-white dark:bg-white text-sm">
+                        <table className="  border border-collapse rounded overflow-hidden text-left bg-white dark:bg-white text-sm">
                             <thead>
                                 <tr>
-                                    <th colSpan="6" className="border p-2 text-center bg-white dark:bg-white">
+                                    <th colSpan="7" className="border p-2 text-center bg-white dark:bg-white">
                                         Project Name: PMS
                                     </th>
                                 </tr>
-                                <tr className="bg-indigo-400  text-sm text-white">
+                                <tr className="bg-indigo-400   text-sm text-white">
+                                    <th className="border p-2">Task ID</th>
                                     <th className="border p-2">Task Name</th>
                                     <th className="border p-2">Task Description File</th>
-                                    <th className="border p-2">Solution File</th>
+                                    <th className="border p-2">Deadline Date</th>
+                                    {/* <th className="border p-2">Solution File</th> */}
                                     <th className="border p-2">Upload Solution</th>
                                     <th className="border p-2">Upload Task</th>
                                 </tr>
@@ -78,6 +86,9 @@ function Task() {
                             <tbody>
                                 {tasks.map((task) => (
                                     <tr key={task.id}>
+                                        <td className="border p-2">
+                                            {task.id}
+                                        </td>
                                         <td className="border p-2">
                                             {task.taskName}
                                         </td>
@@ -89,14 +100,15 @@ function Task() {
                                             </p>
                                         </td>
                                         <td className="border p-2">
-                                            {/* Display solution file or any additional information here */}
+                                            {task.deadline}
                                         </td>
+
                                         <td className="border p-2">
                                             <input
                                                 type="file"
-                                                accept=".pdf, .docx"
+                                                accept=".pdf, .zip, .docx"
                                                 onChange={(event) => handleFileUpload(event, task.id)}
-                                                className="mt-1 p-2 w-full border rounded-md"
+                                                className="mt-1 w-full border rounded-sm"
                                             />
                                         </td>
                                         <td className="border p-2">
@@ -107,7 +119,7 @@ function Task() {
                                             >
                                                 Submit Task
                                             </button>
-                                            {task.successMessage && <p className="text-green-500 mt-2">{task.successMessage}</p>}
+                                            {task.successMessage}
                                         </td>
                                     </tr>
                                 ))}
