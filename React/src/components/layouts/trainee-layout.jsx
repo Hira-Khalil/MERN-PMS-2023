@@ -1,7 +1,7 @@
 import react, { useState } from "react";
 import Nav from "../navbar";
 import Sidebar from "../trainee/sidebar";
-import Dashboard from "../trainee/dashboard"; Ta
+import Dashboard from "../trainee/dashboard";
 import ProjectDetails from "../trainee/project-details";
 import Tasks from "../trainee/tasks"
 import ProgressAnalytics from "../trainee/progress-analytics";
