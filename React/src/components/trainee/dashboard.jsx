@@ -7,7 +7,7 @@ function Dashboard() {
     return (
         <>
 
-            <div className="  px-7 h-screen w-screen flex justify-end ">
+            <div className="  px-7 h-screen  w-screen flex justify-end ">
                 <div className=" ps-12 w-10/12 h-5/6">
                     <nav aria-label="breadcrumb" className="text-black w-full p-4 dark:bg-gray-800 dark:text-gray-100">
                         <ol className="text-black mt-6 flex h-8 space-x-2 dark:text-gray-100 px-5">
@@ -24,7 +24,7 @@ function Dashboard() {
                     </nav>
                     <section className="px-5 md:p-8 dark:bg-gray-800 dark:text-gray-100">
                         <div className="container grid grid-cols-1 gap-6 m-4 mx-auto md:m-0 md:grid-cols-2 xl:grid-cols-3">
-                            <div className="bg-white  rounded-full flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">
+                            <div className="bg-white shadow-md rounded-full flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">
                                 <div className="flex flex-col items-center justify-center ml-3 mt-3 h-8 w-8 rounded-full bg-indigo-500 text-white dark:text-gray-800">
 
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-6 h-6">
@@ -33,43 +33,43 @@ function Dashboard() {
                                         <path d="M32,362.667,248.471,478.118a16,16,0,0,0,15.058,0L480,362.667V326.4L256,445.867,32,326.4Z"></path>
                                     </svg>
                                 </div>
-                                <div className="flex items-center justify-between flex-1 p-3">
+                                <div className="flex items-center shadow-md  justify-between flex-1 p-3">
                                     <p className="text-2xl font-semibold">10+</p>
                                     <p>Assigned Tasks</p>
                                 </div>
                             </div>
-                            <div className="bg-white  rounded-full flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">
+                            <div className="bg-white shadow-md  rounded-full flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">
                                 <div className="flex flex-col items-center justify-center ml-3 mt-3 h-8 w-8 rounded-full bg-indigo-500 text-white dark:text-gray-800">
                                     <MdOutlinePendingActions style={{ fontSize: '20px' }} />
 
                                 </div>
-                                <div className="flex items-center justify-between flex-1 p-3">
+                                <div className="flex items-center shadow-md justify-between flex-1 p-3">
                                     <p className="text-2xl font-semibold">15+</p>
                                     <p>Pending Tasks</p>
                                 </div>
                             </div>
-                            <div className="bg-white  rounded-full flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">
+                            <div className="bg-white  rounded-full shadow-md flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">
                                 <div className="flex flex-col items-center justify-center ml-3 mt-3 h-8 w-8 rounded-full bg-indigo-500 text-white dark:text-gray-800">
                                     <BsMicrosoftTeams style={{ fontSize: '20px' }} />
                                 </div>
-                                <div className="flex items-center justify-between flex-1 p-3">
+                                <div className="flex items-center shadow-md justify-between flex-1 p-3">
                                     <p className="text-2xl font-semibold">14</p>
                                     <p>Team Members</p>
                                 </div>
                             </div>
-                            <div className="bg-white  rounded-full flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">
+                            <div className="bg-white shadow-md  rounded-full flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">
                                 <div className="flex flex-col items-center justify-center ml-3 mt-3 h-8 w-8 rounded-full bg-indigo-500 text-white dark:text-gray-800">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-6 h-6">
                                         <path d="M256.25,16A240,240,0,0,0,88,84.977V16H56V144H184V112H106.287A208,208,0,0,1,256.25,48C370.8,48,464,141.2,464,255.75S370.8,463.5,256.25,463.5,48.5,370.3,48.5,255.75h-32A239.75,239.75,0,0,0,425.779,425.279,239.75,239.75,0,0,0,256.25,16Z"></path>
                                         <polygon points="240 111.951 239.465 288 368 288 368 256 271.563 256 272 112.049 240 111.951"></polygon>
                                     </svg>
                                 </div>
-                                <div className="flex items-center justify-between flex-1 p-3">
+                                <div className="flex shadow-md  items-center justify-between flex-1 p-3">
                                     <p className="text-2xl font-semibold">24/7 h</p>
                                     <p>Task Deadlines</p>
                                 </div>
                             </div>
-                            <div className="bg-white  rounded-full flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">
+                            <div className="bg-white shadow-md rounded-full flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">
                                 <div className="flex flex-col items-center justify-center ml-3 mt-3 h-8 w-8 rounded-full bg-indigo-500 text-white dark:text-gray-800">
                                     <LiaProjectDiagramSolid style={{ fontSize: '20px' }} />
 
@@ -79,7 +79,7 @@ function Dashboard() {
                                     <p>Project</p>
                                 </div>
                             </div>
-                            <div className="bg-white  rounded-full flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">
+                            <div className="bg-white shadow-md  rounded-full flex overflow-hidden dark:bg-gray-900 dark:text-gray-100">
                                 <div className="flex flex-col items-center justify-center ml-3 mt-3 h-8 w-8 rounded-full bg-indigo-500 text-white dark:text-gray-800">
                                     <GrHelpBook style={{ fontSize: '20px' }} />
                                 </div>

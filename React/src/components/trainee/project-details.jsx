@@ -57,7 +57,7 @@ function ProjectDetails() {
                                         Project Name: PMS
                                     </th>
                                 </tr>
-                                <tr className='bg-indigo-400 text-white'>
+                                <tr className='bg-indigo-500 text-white'>
                                     <th className="border p-2">ID</th>
                                     <th className="border p-2">Name</th>
                                     <th className="border p-2">Task</th>

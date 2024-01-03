@@ -73,7 +73,7 @@ function Task() {
                                         Project Name: PMS
                                     </th>
                                 </tr>
-                                <tr className="bg-indigo-400   text-sm text-white">
+                                <tr className="bg-indigo-500   text-sm text-white">
                                     <th className="border p-2">Task ID</th>
                                     <th className="border p-2">Task Name</th>
                                     <th className="border p-2">Task Description File</th>
@@ -115,7 +115,7 @@ function Task() {
                                             <button
                                                 type="submit"
                                                 onClick={(event) => handleSubmit(event, task.id)}
-                                                className="bg-indigo-400 text-white px-2 py-1 rounded-md"
+                                                className="bg-indigo-500 text-white px-2 py-1 rounded-md"
                                             >
                                                 Submit Task
                                             </button>
