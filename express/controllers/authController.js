@@ -10,7 +10,8 @@ const signUpSchema = joi.object().keys({
     lastName: joi.string().required().min(3).max(40),
     email: joi.string().required().email(),
     password: joi.string().required().pattern(new RegExp("^[a-zA-Z0-9]{3,30}$")),
-    confirmPassword: joi.ref("password")
+    confirmPassword: joi.ref("password"),
+
 })
 module.exports = {
     login: async (req, res) => {
